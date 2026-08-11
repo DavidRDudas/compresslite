@@ -1,11 +1,41 @@
 "use client";
 
-import { useForm, ValidationError } from "@formspree/react";
+import { FormEvent, useState } from "react";
+
+type SubmissionState = "idle" | "submitting" | "succeeded" | "failed";
 
 export function ContactForm() {
-  const [state, handleSubmit] = useForm("mwleopzr");
+  const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  if (state.succeeded) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setSubmissionState("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null) as { errors?: Array<{ message?: string }> } | null;
+        const message = result?.errors?.map((error) => error.message).filter(Boolean).join(" ");
+        throw new Error(message || "Your message could not be sent.");
+      }
+
+      setSubmissionState("succeeded");
+      form.reset();
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Your message could not be sent.");
+      setSubmissionState("failed");
+    }
+  }
+
+  if (submissionState === "succeeded") {
     return (
       <div className="form-success" role="status" aria-live="polite">
         <span aria-hidden="true">✓</span>
@@ -29,12 +59,10 @@ export function ContactForm() {
         <div className="form-field">
           <label htmlFor="support-name">Name</label>
           <input id="support-name" name="name" type="text" autoComplete="name" required />
-          <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
         <div className="form-field">
           <label htmlFor="support-email">Email</label>
           <input id="support-email" name="email" type="email" autoComplete="email" required />
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
       </div>
 
@@ -48,7 +76,6 @@ export function ContactForm() {
           <option value="bug">Bug report</option>
           <option value="other">Something else</option>
         </select>
-        <ValidationError prefix="Topic" field="topic" errors={state.errors} />
       </div>
 
       <div className="form-row">
@@ -72,7 +99,6 @@ export function ContactForm() {
           placeholder="Tell us what happened and where you got stuck."
           required
         />
-        <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>
 
       <p className="form-note">
@@ -81,10 +107,14 @@ export function ContactForm() {
         <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer"> Formspree Privacy Policy</a>.
       </p>
 
-      <button className="button button-primary form-submit" type="submit" disabled={state.submitting}>
-        {state.submitting ? "Sending…" : "Send message"}
+      <button className="button button-primary form-submit" type="submit" disabled={submissionState === "submitting"}>
+        {submissionState === "submitting" ? "Sending…" : "Send message"}
       </button>
-      <ValidationError errors={state.errors} />
+      {submissionState === "failed" && (
+        <p className="form-error" role="alert">
+          {errorMessage} Please check your connection and try again.
+        </p>
+      )}
     </form>
   );
 }

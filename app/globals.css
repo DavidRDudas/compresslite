@@ -225,6 +225,7 @@ h1, h2, h3, p { margin-top: 0; }
   box-shadow: 0 0 0 4px rgba(75, 62, 255, 0.1);
 }
 .form-field [role="alert"], .support-form > [role="alert"] { color: #b4233b; font-size: 13px; line-height: 1.45; }
+.form-error { margin: -8px 0 0 !important; color: #b4233b !important; font-size: 13px !important; }
 .form-note { color: #797486 !important; font-size: 12px !important; line-height: 1.55; }
 .form-note a { color: var(--indigo); text-underline-offset: 2px; }
 .form-submit { width: fit-content; border: 0; cursor: pointer; font-size: 16px; }
