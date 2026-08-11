@@ -9,8 +9,9 @@ export const metadata: Metadata = {
   description:
     "Support and privacy information for CompressLite, the private on-device photo compressor.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/app-icon.png",
+    shortcut: "/app-icon.png",
+    apple: "/app-icon.png",
   },
 };
 

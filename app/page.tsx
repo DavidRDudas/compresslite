@@ -15,29 +15,33 @@ export default function Home() {
 
       <main>
         <section className="hero wrap" aria-labelledby="hero-title">
-          <div className="eyebrow">
-            <span className="status-dot" aria-hidden="true" />
-            Private by design
+          <div className="hero-content">
+            <p className="hero-kicker">CompressLite for iPhone</p>
+            <h1 id="hero-title">Your photos,<br />only lighter.</h1>
+            <p className="hero-copy">
+              Make room on your iPhone without sending your photos anywhere.
+              Compare the result, save a new copy, and keep the final say.
+            </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#help">Get support</a>
+              <Link className="text-link" href="/privacy">
+                Privacy Policy <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
-          <h1 id="hero-title">Smaller photos.<br />More room for life.</h1>
-          <p className="hero-copy">
-            CompressLite reduces photo file sizes directly on your iPhone. Your
-            photos stay under your control, with clear choices before anything
-            is saved or removed.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#help">Get help</a>
-            <Link className="button button-secondary" href="/privacy">
-              Read the privacy policy
-            </Link>
+          <div className="hero-visual" aria-label="CompressLite app icon">
+            <span className="icon-shadow" aria-hidden="true" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/app-icon.png" alt="CompressLite" />
+            <p>Compress locally.<br />Keep control.</p>
           </div>
         </section>
 
         <section className="trust-strip" aria-label="Product promises">
           <div className="wrap trust-grid">
-            <div><strong>100%</strong><span>on-device processing</span></div>
-            <div><strong>Zero</strong><span>accounts or tracking</span></div>
-            <div><strong>You choose</strong><span>what gets replaced</span></div>
+            <div><strong>On your iPhone</strong><span>Photo processing stays local</span></div>
+            <div><strong>No account</strong><span>Open the app and get started</span></div>
+            <div><strong>Your choice</strong><span>Keep copies or replace originals</span></div>
           </div>
         </section>
 

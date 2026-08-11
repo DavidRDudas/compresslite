@@ -17,8 +17,8 @@ export default function PrivacyPage() {
           <p className="kicker">Your photos remain yours</p>
           <h1>Privacy Policy</h1>
           <p className="policy-lede">
-            CompressLite is designed to compress photos without sending them to
-            David Dudas or to an app-operated server.
+            CompressLite is designed to compress photos without sending them off
+            your device or to an app-operated server.
           </p>
           <p className="updated">Effective August 10, 2026 · Last updated August 10, 2026</p>
         </header>

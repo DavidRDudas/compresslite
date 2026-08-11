@@ -2,14 +2,9 @@ import Link from "next/link";
 
 export function BrandMark() {
   return (
-    <span className="brand-mark" aria-hidden="true">
-      <i className="petal petal-one" />
-      <i className="petal petal-two" />
-      <i className="petal petal-three" />
-      <i className="petal petal-four" />
-      <i className="petal petal-five" />
-      <i className="flower-core" />
-    </span>
+    // The exact artwork shipped in the iOS asset catalog.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img className="brand-mark" src="/app-icon.png" alt="" aria-hidden="true" />
   );
 }
 
@@ -42,7 +37,9 @@ export function SiteFooter() {
           <Link href="/">Support</Link>
           <Link href="/privacy">Privacy Policy</Link>
         </div>
-        <p className="copyright">© 2026 David Dudas</p>
+        <p className="copyright">
+          © 2026 <a href="https://dudas.ai">David Dudas</a>
+        </p>
       </div>
     </footer>
   );

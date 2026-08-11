@@ -20,7 +20,7 @@ test("renders the support page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Support — CompressLite/);
-  assert.match(html, /Smaller photos/);
+  assert.match(html, /Your photos/);
   assert.match(html, /Contact support/);
 });
 
