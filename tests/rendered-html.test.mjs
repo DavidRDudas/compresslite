@@ -21,7 +21,8 @@ test("renders the support page", async () => {
   const html = await response.text();
   assert.match(html, /Support — CompressLite/);
   assert.match(html, /Your photos/);
-  assert.match(html, /Contact support/);
+  assert.match(html, /Send a support request/);
+  assert.match(html, /formspree\.io\/f\/mwleopzr/);
 });
 
 test("renders the privacy policy", async () => {
@@ -29,6 +30,7 @@ test("renders the privacy policy", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Privacy Policy/);
-  assert.match(html, /No developer data collection/);
+  assert.match(html, /No app data collection/);
+  assert.match(html, /Support messages/);
   assert.match(html, /Effective August 10, 2026/);
 });

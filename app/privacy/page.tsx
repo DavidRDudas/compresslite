@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             <ul>
               <li><span>✓</span> No accounts</li>
               <li><span>✓</span> No ads or tracking</li>
-              <li><span>✓</span> No developer data collection</li>
+              <li><span>✓</span> No app data collection</li>
               <li><span>✓</span> Processing happens on device</li>
             </ul>
           </aside>
@@ -103,15 +103,37 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2>7. Children&apos;s privacy</h2>
+              <h2>7. Support messages</h2>
               <p>
-                CompressLite is a general-purpose utility and does not knowingly
-                collect personal information from children or any other users.
+                If you voluntarily use the support form on this website, the form
+                collects the name, email address, support topic, message, and any
+                optional device details you submit. This information is used only
+                to respond to your request, troubleshoot the reported issue, keep
+                reasonable support records, and prevent abuse.
+              </p>
+              <p>
+                Form submissions are processed by Formspree, which may also process
+                technical information such as your IP address, browser type, access
+                time, and referring page to operate and secure its service. Do not
+                submit private photos or sensitive information. Review the
+                <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer"> Formspree Privacy Policy</a>
+                for details about its practices. Support information is not sold or
+                used by David Dudas for advertising and is kept only as long as
+                reasonably necessary for support, security, and legal obligations.
               </p>
             </section>
 
             <section>
-              <h2>8. Security</h2>
+              <h2>8. Children&apos;s privacy</h2>
+              <p>
+                CompressLite is a general-purpose utility and does not knowingly
+                collect personal information from children through the app. The
+                support form is not intended for children to submit personal information.
+              </p>
+            </section>
+
+            <section>
+              <h2>9. Security</h2>
               <p>
                 CompressLite minimizes privacy risk by processing photos on device,
                 relying on Apple&apos;s photo permission controls, and avoiding developer-
@@ -121,7 +143,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2>9. Changes to this policy</h2>
+              <h2>10. Changes to this policy</h2>
               <p>
                 This policy may be updated if CompressLite&apos;s features or legal
                 obligations change. The current version and its effective date will
@@ -130,11 +152,11 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2>10. Contact</h2>
+              <h2>11. Contact</h2>
               <p>
-                For privacy questions or support, visit the <Link href="/">CompressLite
-                support page</Link> or open a support request using the contact link
-                provided there. Please do not include private photos in a support request.
+                For privacy questions or support, use the form on the <Link href="/">CompressLite
+                support page</Link>. Please do not include private photos or sensitive
+                information in a support request.
               </p>
             </section>
           </article>

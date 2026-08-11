@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "./contact-form";
 import { BrandHeader, SiteFooter } from "./site-components";
 
 export const metadata: Metadata = {
@@ -89,22 +90,16 @@ export default function Home() {
         </section>
 
         <section className="section wrap contact-section" aria-labelledby="contact-title">
-          <div>
+          <div className="contact-intro">
             <p className="kicker">Still need a hand?</p>
-            <h2 id="contact-title">Tell us what happened.</h2>
+            <h2 id="contact-title">Send a support request.</h2>
             <p>
-              Include your iPhone model, iOS version, and the step where the
-              problem occurred. Please do not attach private photos.
+              Tell us where you got stuck. Device details are optional, but they
+              can make troubleshooting faster.
             </p>
+            <p className="response-note">Please don’t include or attach private photos.</p>
           </div>
-          <a
-            className="button button-primary"
-            href="https://github.com/DavidRDudas/ImageCompression/issues"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Contact support
-          </a>
+          <ContactForm />
         </section>
       </main>
 
