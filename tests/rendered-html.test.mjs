@@ -12,6 +12,8 @@ test("renders the support page", async () => {
   assert.match(html, /Your photos/);
   assert.match(html, /Send a support request/);
   assert.match(html, /formspree\.io\/f\/mwleopzr/);
+  assert.match(html, /https:\/\/compresslite\.app/);
+  assert.doesNotMatch(html, /[\"']\/compresslite\//);
 });
 
 test("renders the privacy policy", async () => {

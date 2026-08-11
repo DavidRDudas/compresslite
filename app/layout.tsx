@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://davidrdudas.github.io/compresslite";
+const siteUrl = "https://compresslite.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

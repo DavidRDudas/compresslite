@@ -2,8 +2,8 @@
 
 The public support and privacy website for the CompressLite iPhone app.
 
-- Support: https://davidrdudas.github.io/compresslite/
-- Privacy: https://davidrdudas.github.io/compresslite/privacy/
+- Support: https://compresslite.app/
+- Privacy: https://compresslite.app/privacy/
 
 ## Prerequisites
 

@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
-const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "compresslite";
-const basePath = isGitHubPages ? `/${repositoryName}` : "";
+// The custom domain serves this project site from the domain root. Keeping the
+// repository base path here would make every asset point at /compresslite/*.
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",
