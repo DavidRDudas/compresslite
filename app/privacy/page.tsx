@@ -115,8 +115,8 @@ export default function PrivacyPage() {
                 Form submissions are processed by Formspree, which may also process
                 technical information such as your IP address, browser type, access
                 time, and referring page to operate and secure its service. Do not
-                submit private photos or sensitive information. Review the
-                <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer"> Formspree Privacy Policy</a>
+                submit private photos or sensitive information. Review the{" "}
+                <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">Formspree Privacy Policy</a>
                 for details about its practices. Support information is not sold or
                 used by David Dudas for advertising and is kept only as long as
                 reasonably necessary for support, security, and legal obligations.

@@ -1,10 +1,12 @@
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function BrandMark() {
   return (
     // The exact artwork shipped in the iOS asset catalog.
     // eslint-disable-next-line @next/next/no-img-element
-    <img className="brand-mark" src="/app-icon.png" alt="" aria-hidden="true" />
+    <img className="brand-mark" src={`${basePath}/app-icon.png`} alt="" aria-hidden="true" />
   );
 }
 

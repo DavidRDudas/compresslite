@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     "Help, answers, and privacy information for the CompressLite iPhone app.",
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function Home() {
   return (
     <div className="site-shell">
@@ -33,7 +35,7 @@ export default function Home() {
           <div className="hero-visual" aria-label="CompressLite app icon">
             <span className="icon-shadow" aria-hidden="true" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/app-icon.png" alt="CompressLite" />
+            <img src={`${basePath}/app-icon.png`} alt="CompressLite" />
             <p>Compress locally.<br />Keep control.</p>
           </div>
         </section>

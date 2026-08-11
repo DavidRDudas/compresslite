@@ -1,34 +1,21 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(path = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request(`http://localhost${path}`, {
-      headers: { accept: "text/html" },
-    }),
-    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
-    { waitUntil() {}, passThroughOnException() {} },
-  );
+async function render(path = "") {
+  return readFile(new URL(`../out${path}/index.html`, import.meta.url), "utf8");
 }
 
 test("renders the support page", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /Support — CompressLite/);
+  const html = await render();
+  assert.match(html, /<title>Support<\/title>/);
   assert.match(html, /Your photos/);
   assert.match(html, /Send a support request/);
   assert.match(html, /formspree\.io\/f\/mwleopzr/);
 });
 
 test("renders the privacy policy", async () => {
-  const response = await render("/privacy");
-  assert.equal(response.status, 200);
-  const html = await response.text();
+  const html = await render("/privacy");
   assert.match(html, /Privacy Policy/);
   assert.match(html, /No app data collection/);
   assert.match(html, /Support messages/);

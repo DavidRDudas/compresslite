@@ -103,8 +103,8 @@ export function ContactForm() {
 
       <p className="form-note">
         Please don’t include private photos or sensitive information. By sending this form,
-        you agree that Formspree will process your submission as described in the
-        <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer"> Formspree Privacy Policy</a>.
+        you agree that Formspree will process your submission as described in the{" "}
+        <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">Formspree Privacy Policy</a>.
       </p>
 
       <button className="button button-primary form-submit" type="submit" disabled={submissionState === "submitting"}>
