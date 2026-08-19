@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "./contact-form";
-import { BrandHeader, SiteFooter } from "./site-components";
+import { appStoreUrl, BrandHeader, SiteFooter } from "./site-components";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -26,7 +26,10 @@ export default function Home() {
               Compare the result, save a new copy, and keep the final say.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#help">Get support</a>
+              <a className="button button-primary" href={appStoreUrl}>
+                Download on the App Store
+              </a>
+              <a className="button button-secondary" href="#help">Get support</a>
               <Link className="text-link" href="/privacy">
                 Privacy Policy <span aria-hidden="true">→</span>
               </Link>

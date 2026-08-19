@@ -68,6 +68,16 @@ a { color: inherit; }
 nav { display: flex; align-items: center; gap: 28px; }
 nav a { color: var(--muted); font-size: 15px; font-weight: 650; text-decoration: none; }
 nav a:hover { color: var(--indigo); }
+.nav-download {
+  min-height: 40px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  color: white;
+  background: var(--ink);
+}
+.nav-download:hover { color: white; background: var(--indigo); }
 
 .hero {
   min-height: 680px;
@@ -297,6 +307,7 @@ h1, h2, h3, p { margin-top: 0; }
   .header-inner { min-height: 68px; }
   nav { gap: 16px; }
   nav a { font-size: 14px; }
+  .nav-download { min-height: 38px; padding-inline: 12px; }
   .brand { font-size: 16px; gap: 9px; }
   .brand-mark { width: 32px; height: 32px; }
   .hero h1 { letter-spacing: -0.06em; }

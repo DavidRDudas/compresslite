@@ -13,7 +13,12 @@ test("renders the support page", async () => {
   assert.match(html, /Send a support request/);
   assert.match(html, /formspree\.io\/f\/mwleopzr/);
   assert.match(html, /https:\/\/compresslite\.app/);
-  assert.doesNotMatch(html, /[\"']\/compresslite\//);
+  assert.match(
+    html,
+    /https:\/\/apps\.apple\.com\/us\/app\/compresslite-photo-saver\/id6800169539/,
+  );
+  assert.match(html, /Download on the App Store/);
+  assert.doesNotMatch(html, /["']\/compresslite\//);
 });
 
 test("renders the privacy policy", async () => {

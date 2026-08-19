@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const appStoreUrl =
+  "https://apps.apple.com/us/app/compresslite-photo-saver/id6800169539";
 
 export function BrandMark() {
   return (
@@ -21,6 +23,9 @@ export function BrandHeader() {
         <nav aria-label="Main navigation">
           <Link href="/">Support</Link>
           <Link href="/privacy">Privacy</Link>
+          <a className="nav-download" href={appStoreUrl}>
+            App Store
+          </a>
         </nav>
       </div>
     </header>
@@ -36,6 +41,7 @@ export function SiteFooter() {
           <p>Made with care by David Dudas.</p>
         </div>
         <div className="footer-links">
+          <a href={appStoreUrl}>App Store</a>
           <Link href="/">Support</Link>
           <Link href="/privacy">Privacy Policy</Link>
         </div>
